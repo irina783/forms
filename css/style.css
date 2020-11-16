@@ -25,6 +25,11 @@ body{
     margin: 0;
     font-family:'Roboto', sans-serif;
 }
+input,
+select,
+textarea{
+    box-sizing: border-box;
+}
 .wrapper{
     margin: 0 auto;
     max-width: 990px;
@@ -51,27 +56,22 @@ h2{
     border: 1px solid #ccc;
 }
 .selectinput{
-    visibility: hidden;
     padding: 15px 15px 12px;
     width: 100%;
     border-radius: 3px;
     background-color: #fff;
     border: 1px solid #ccc;
+    appearance: none;
 }
 .optioninput{
     visibility: visible;
     color: #1f222c;
     font: 400 14px "Roboto";
 }
-.city-select{
-    position: relative;
-}
 .simple-select{
-    padding: 15px 15px 12px;
+    position: relative;
+    display: inline-block;
     width: 100%;
-    border-radius: 3px;
-    background-color: #fff;
-    border: 1px solid #ccc;
 }
 .simple-select:after{
     content: '';
@@ -79,7 +79,7 @@ h2{
     display: block;
     width: 9px;
     height: 5px;
-    right: -12px;
+    right: 15px;
     top: 19px;
     background-image: url(../img/select.png);
 }
@@ -101,6 +101,7 @@ h2{
     font-family: 700 14px "Roboto";
     text-align: center;
     border-radius: 3px;
-    border-color: #12d661;
     background-color: #12d661;
+    border: none;
+    cursor: pointer;
 }

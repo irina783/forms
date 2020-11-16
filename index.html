@@ -1,42 +1,50 @@
 <!DOCTYPE html>
 <html lang="uk">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=3.0, minimum-scale=1.0">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=3.0, minimum-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
     <div class="wrapper">
         <h1>Форми</h1>
         <div class="simple-form">
             <h2>01. ПРОСТА ФОРМА</h2>
             <form action="sendmail.php" method="post">
-                <p><label class="simple"><input class="textinput" type="text" name="user_name" placeholder="Введіть ім'я" maxlength="30" /></label></p>
-                <p><label class="simple"><input class="textinput" type="text" name="user_email" placeholder="Email" maxlength="30" /></label></p>
+                <p><label class="simple"><input class="textinput" type="text" name="user_name"
+                            placeholder="Введіть ім'я" maxlength="30" /></label></p>
+                <p><label class="simple"><input class="textinput" type="text" name="user_email" placeholder="Email"
+                            maxlength="30" /></label></p>
                 <p class="city-select">
                     <label class="simple-select" for="city">
-                    <select class="selectinput" id="city" name="city">
-                        <option class="optioninput" class="optioninput" disabled selected value="your_city">Ваше місто</option>
-                        <option class="optioninput" value="khm">Хмельницький</option>
-                        <option class="optioninput" value="kyiv">Київ</option>
-                        <option class="optioninput" value="vin">Вінниця</option>
-                        <option class="optioninput" value="ternopil">Тернопіль</option>
-                    </select>
+                        <select class="selectinput" id="city" name="city">
+                            <option class="optioninput" class="optioninput" disabled selected value="your_city">Ваше
+                                місто</option>
+                            <option class="optioninput" value="khm">Хмельницький</option>
+                            <option class="optioninput" value="kyiv">Київ</option>
+                            <option class="optioninput" value="vin">Вінниця</option>
+                            <option class="optioninput" value="ternopil">Тернопіль</option>
+                        </select>
                     </label>
                 </p>
                 <p>
                     <label class="simple">
-                    <textarea class="simple-textarea" name="comment" placeholder="Email" resize="vertical" ></textarea>
-                    </label> 
+                        <textarea class="simple-textarea" name="comment" placeholder="Email"
+                            resize="vertical"></textarea>
+                    </label>
                 </p>
                 <p>
                     <label class="simple">
-                    <input class="simple-button" type="submit" value="Зареєструватися" />
+                        <input class="simple-button" type="submit" value="Зареєструватися" />
                     </label>
                 </p>
             </form>
         </div>
     </div>
 </body>
+
 </html>
