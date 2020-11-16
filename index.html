@@ -12,27 +12,27 @@
         <div class="simple-form">
             <h2>01. ПРОСТА ФОРМА</h2>
             <form action="sendmail.php" method="post">
-                <p><label><input type="text" name="user_name" placeholder="Введіть ім'я"/></label></p>
-                <p><label><input type="text" name="user_email" placeholder="Email"/></label></p>
-                <p>
-                    <label for="city">
-                    <select id="city" name="city">
-                        <option value="your_city">Ваше місто</option>
-                        <option value="khm">Хмельницький</option>
-                        <option value="kyiv">Київ</option>
-                        <option value="vin">Вінниця</option>
-                        <option value="ternopil">Тернопіль</option>
+                <p><label class="simple"><input class="textinput" type="text" name="user_name" placeholder="Введіть ім'я" maxlength="30" /></label></p>
+                <p><label class="simple"><input class="textinput" type="text" name="user_email" placeholder="Email" maxlength="30" /></label></p>
+                <p class="city-select">
+                    <label class="simple-select" for="city">
+                    <select class="selectinput" id="city" name="city">
+                        <option class="optioninput" class="optioninput" disabled selected value="your_city">Ваше місто</option>
+                        <option class="optioninput" value="khm">Хмельницький</option>
+                        <option class="optioninput" value="kyiv">Київ</option>
+                        <option class="optioninput" value="vin">Вінниця</option>
+                        <option class="optioninput" value="ternopil">Тернопіль</option>
                     </select>
                     </label>
                 </p>
                 <p>
-                    <label>
-                    <textarea name="comment" placeholder="Email"></textarea>
+                    <label class="simple">
+                    <textarea class="simple-textarea" name="comment" placeholder="Email" resize="vertical" ></textarea>
                     </label> 
                 </p>
                 <p>
-                    <label>
-                    <input type="submit" value="Зареєструватися" />
+                    <label class="simple">
+                    <input class="simple-button" type="submit" value="Зареєструватися" />
                     </label>
                 </p>
             </form>

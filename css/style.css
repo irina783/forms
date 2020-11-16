@@ -1,8 +1,106 @@
+@font-face {
+    font-family: 'Roboto';
+    src: url('../fonts/Roboto-Bold.eot');
+    src: url('../fonts/Roboto-Bold.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/Roboto-Bold.woff2') format('woff2'),
+        url('../fonts/Roboto-Bold.woff') format('woff'),
+        url('../fonts/Roboto-Bold.ttf') format('truetype'),
+        url('../fonts/Roboto-Bold.svg#../fonts/Roboto-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Roboto Slab';
+    src: url('../fonts_rs/RobotoSlab-Bold.eot');
+    src: url('../fonts_rs/RobotoSlab-Bold.eot?#iefix') format('embedded-opentype'),
+        url('../fonts_rs/RobotoSlab-Bold.woff2') format('woff2'),
+        url('../fonts_rs/RobotoSlab-Bold.woff') format('woff'),
+        url('../fonts_rs/RobotoSlab-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
 body{
     margin: 0;
-    font-family: Roboto;
+    font-family:'Roboto', sans-serif;
 }
 .wrapper{
     margin: 0 auto;
     max-width: 990px;
+}
+h1{
+    color: #1f222c;
+    font: 700 30px "Roboto Slab";
+    text-align: center;
+}
+h2{
+    color: #b3b3b3;
+    letter-spacing: 0px;
+    font-family: 700 20px "Roboto";
+}
+.simple-form{
+    width: 330px;
+}
+.textinput{
+    padding: 15px 15px 12px;
+    color: #b3b3b3;
+    width: 100%;
+    border-radius: 3px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+}
+.selectinput{
+    visibility: hidden;
+    padding: 15px 15px 12px;
+    width: 100%;
+    border-radius: 3px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+}
+.optioninput{
+    visibility: visible;
+    color: #1f222c;
+    font: 400 14px "Roboto";
+}
+.city-select{
+    position: relative;
+}
+.simple-select{
+    padding: 15px 15px 12px;
+    width: 100%;
+    border-radius: 3px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+}
+.simple-select:after{
+    content: '';
+    position: absolute;
+    display: block;
+    width: 9px;
+    height: 5px;
+    right: -12px;
+    top: 19px;
+    background-image: url(../img/select.png);
+}
+.simple-textarea{
+    padding: 15px 15px 12px;
+    color: #b3b3b3;
+    width: 100%;
+    max-width: 330px;
+    height: 130px;
+    max-height: 130px;
+    border-radius: 3px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+}
+.simple-button{
+    padding: 15px 15px 12px;
+    width: 100%;
+    color: #fff;
+    font-family: 700 14px "Roboto";
+    text-align: center;
+    border-radius: 3px;
+    border-color: #12d661;
+    background-color: #12d661;
 }
