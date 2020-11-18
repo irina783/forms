@@ -44,6 +44,62 @@
                 </p>
             </form>
         </div>
+        <fieldset class="elements">
+            <legend>02. Елементи</legend>
+            <form class="second" action="send.php" method="POST">
+                <div class="radio-buttons">
+                    <p>
+                        <input class="delivery" type="radio" id="new_post" name="radio"/>
+                        <label for="new_post">Нова Пошта</label>
+                    </p>
+                    <p>
+                        <input class="delivery" type="radio" id="courier" name="radio"/>
+                        <label for="courier">Кур'єр</label>
+                    </p>
+                    <p>
+                        <input class="delivery" disabled type="radio" id="export" name="radio"/>
+                        <label for="export">Самовивіз</label>
+                    </p>
+                </div>
+                <div class="check-buttons">
+                    <p>
+                        <input class="delivery" type="checkbox" id="terms_contract"/>
+                        <label for="terms_contract">Прочитав умови договору</label>
+                    </p>
+                    <p>
+                        <input class="delivery" type="checkbox" id="agree_VAT"/>
+                        <label for="agree_VAT">Згідний з ПДВ 9%</label>
+                    </p>
+                    <p>
+                        <input class="delivery" disabled type="checkbox" id="receive_news"/>
+                        <label for="receive_news">Отримувати новини на ел. пошту</label>
+                    </p>
+                </div>
+                <div class="date">
+                    <table class="status">
+                        <tr>
+                            <th scope="row">Статус</th>
+                            <td>
+                                <input class="delivery" type="checkbox" id="new_post">
+                                <label for="new_post">Новинки</label>
+                                <input class="delivery" type="checkbox" id="courier"/>
+                                <label for="courier">Акційні товари</label>
+                                <input class="delivery" type="checkbox" id="export"/>
+                                <label for="export">Розпродаж</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Дата</th>
+                            <td>
+                                <label for="date"></label>
+                                <input type="date" name="date" selected value="2018-03-17" id="date">
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+
+            </form>
+        </fieldset>
     </div>
 </body>
 
