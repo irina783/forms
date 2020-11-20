@@ -13,7 +13,7 @@
     <div class="wrapper">
         <h1>Форми</h1>
         <div class="simple-form">
-            <h2>01. ПРОСТА ФОРМА</h2>
+            <h2>01. проста форма</h2>
             <form action="sendmail.php" method="post">
                 <p><label class="simple"><input class="textinput" type="text" name="user_name"
                             placeholder="Введіть ім'я" maxlength="30" /></label></p>
@@ -44,8 +44,8 @@
                 </p>
             </form>
         </div>
-        <fieldset class="elements">
-            <h2>02. Елементи</h2>
+        <div class="elements">
+            <h2>02. елементи</h2>
             <form class="second" action="send.php" method="POST">
                 <div class="radio-buttons">
                     <p>
@@ -53,7 +53,7 @@
                         <label for="new_post">Нова Пошта</label>
                     </p>
                     <p>
-                        <input class="delivery" type="radio" id="courier" name="radio"/>
+                        <input class="delivery" type="radio" id="courier" ndivio"/>
                         <label for="courier">Кур'єр</label>
                     </p>
                     <p>
@@ -80,11 +80,11 @@
                         <tr>
                             <th scope="row">Статус</th>
                             <td>
-                                <input class="delivery2" type="checkbox" id="new_post">
+                                <input class="delivery3" type="checkbox" id="new_post"/>
                                 <label for="new_post">Новинки</label>
-                                <input class="delivery2" type="checkbox" id="courier"/>
+                                <input class="delivery3" type="checkbox" id="courier"/>
                                 <label for="courier">Акційні товари</label>
-                                <input class="delivery2" type="checkbox" id="export"/>
+                                <input class="delivery3" type="checkbox" id="export"/>
                                 <label for="export">Розпродаж</label>
                             </td>
                         </tr>
@@ -99,7 +99,41 @@
                 </div>
 
             </form>
-        </fieldset>
+        </div>
+        <div class="style-checkbox">
+            <h2>03. стилізовані чекбокси</h2>
+            <div class="style-checks">
+                <p>
+                    <input class="delivery2" type="checkbox" id="terms_contract"/>
+                    <label for="terms_contract">Прочитав умови договору</label>
+                </p>
+                <p>
+                    <input class="delivery2" type="checkbox" id="agree_VAT"/>
+                    <label for="agree_VAT">Згідний з ПДВ 9%</label>
+                </p>
+                <p>
+                    <input class="delivery2" disabled type="checkbox" id="receive_news"/>
+                    <label for="receive_news">Отримувати новини на ел. пошту</label>
+                </p>
+            </div>
+            <div class="check-butn">
+                <p>
+                    <input class="delivery2" type="checkbox" id="terms_contract"/>
+                    <label for="terms_contract">Прочитав умови договору</label>
+                </p>
+                <p>
+                    <input class="delivery2" type="checkbox" id="agree_VAT"/>
+                    <label for="agree_VAT">Згідний з ПДВ 9%</label>
+                </p>
+                <p>
+                    <input class="delivery2" disabled type="checkbox" id="receive_news"/>
+                    <label for="receive_news">Отримувати новини на ел. пошту</label>
+                </p>
+            </div>
+
+
+
+        </div>
     </div>
 </body>
 
