@@ -45,12 +45,18 @@ h2{
     font-family: 700 20px "Roboto";
     text-transform: uppercase;
 }
+.clear:after{
+    content: '';
+    display: block;
+    clear: both;
+}
 .simple-form{
     width: 330px;
 }
 .textinput{
     padding: 15px 15px 12px;
     color: #b3b3b3;
+    font: 400 14px "Roboto";
     width: 100%;
     border-radius: 3px;
     background-color: #fff;
@@ -65,9 +71,13 @@ h2{
     appearance: none;
 }
 .optioninput{
-    visibility: visible;
+    display: block;
+    padding: 10px;
     color: #1f222c;
     font: 400 14px "Roboto";
+}
+.optioninput:disabled{
+    color: #b3b3b3;
 }
 .simple-select{
     position: relative;
@@ -87,6 +97,7 @@ h2{
 .simple-textarea{
     padding: 15px 15px 12px;
     color: #b3b3b3;
+    font: 400 14px "Roboto";
     width: 100%;
     max-width: 330px;
     height: 130px;
@@ -106,20 +117,47 @@ h2{
     border: none;
     cursor: pointer;
 }
-.elements{
-    border: none;
-}
-input:focus,
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
 select:focus,
 textarea:focus{
-    border: 1px solid green;
+    color: #1f222c;
+    font: 400 14px "Roboto";
+    filter: drop-shadow(0 0 2.5px rgba(62,106,255,0.55));
+    border: 1px solid #3e6aff;;
     outline: none;
 }
+.optioninput:focus{
+    display: block;
+    padding: 10px;
+    color: #fff;
+    background-color: #3e6aff;
+    border: 1px solid #3e6aff;
+    outline: none;
+}
+input[type="submit"]:focus {
+    filter: drop-shadow(0px 2px 2.5px rgba(8,118,52,0.35));
+    outline: none;
+}
+
 .radio-buttons,
 .check-buttons,
 .date{
-    display: inline-block;
+    float: left;
     vertical-align: top;
+}
+.radio-buttons p:first-child,
+.check-buttons p:first-child{
+    margin-top: 0;
+}
+.radio-buttons{
+    max-width: 165px;
+    width: 100%;
+}
+.check-buttons{
+    max-width: 345px;
+    width: 100%;
 }
 .date{
     width: 473px;
@@ -143,10 +181,15 @@ textarea:focus{
     visibility: hidden;
 }
 .delivery+label,
-.delivery2+label,
-.delivery3+label{
+.delivery2+label{
     position: relative;
     padding-left: 25px;
+    color: #1f222c;
+    font: 400 14px "Roboto";
+}
+.delivery:disabled+label,
+.delivery2:disabled+label{
+    color: #b3b3b3;
 }
 .delivery+label:before{
     content: '';
@@ -184,6 +227,9 @@ textarea:focus{
     border-radius: 3px;
     border: 1px solid #ccc;;
 }
+.delivery2:checked+label:before{
+    border: 1px solid #3e6aff;
+}
 .delivery2:checked+label:after,
 .delivery3:checked+label:after{
     content: '';
@@ -197,6 +243,38 @@ textarea:focus{
     border-bottom: 2px solid #244dd7;
     border-radius: 5px;
 }
+.status th{
+    padding: 20px 20px 12px;
+    text-align: left;
+    color: #b3b3b3;
+    font-family: 700 14px "Roboto";
+}
+.status{
+    padding: 20px 20px 12px;
+}
+.data,
+.data:focus{
+    padding: 10px;
+    border: none;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+::-webkit-calendar-picker-indicator {
+    background-image: url(../img/calendar.png);
+}
+.date .delivery2+label{
+    margin-right: 20px;
+}
+
+.status tr{
+    vertical-align: text-bottom;
+}
+.status tr:last-child th,
+.status tr:last-child td{
+    padding-bottom: 20px;
+}
+
+
 .check-man+label,
 .check-woman+label{
     position: relative;
