@@ -160,15 +160,15 @@ input[type="submit"]:focus {
     width: 100%;
 }
 .date{
-    width: 473px;
+    max-width: 473px;
+    border: 1px solid #e5e5e5;
+    border-radius: 3px;
 }
 .status{
     border-collapse: collapse;
     width: 100%;
-    height: 114px;
     background-color: #f7f7f7;
-    border: 1px solid #e5e5e5;
-    border-radius: 3px;
+    box-sizing: border-box;
     overflow: hidden;
 }
 .delivery,
@@ -243,15 +243,14 @@ input[type="submit"]:focus {
     border-bottom: 2px solid #244dd7;
     border-radius: 5px;
 }
-.status th{
+.status td:first-child{
     padding: 20px 20px 12px;
     text-align: left;
     color: #b3b3b3;
-    font-family: 700 14px "Roboto";
+    font: 700 14px "Roboto";
+    width: 20.5%;
 }
-.status{
-    padding: 20px 20px 12px;
-}
+
 .data,
 .data:focus{
     padding: 10px;
@@ -287,19 +286,44 @@ input[type="submit"]:focus {
 .check-man+label:before{
     content: '';
     position: absolute;
-    width: 71px;
-    height: 71px;
+    width: 70px;
+    height: 70px;
     left: 0;
-    top: 2px;
-    background-image: url(../img/w-b-man.png);
+    top: -27px;
+    background: url(../img/style-check.png) no-repeat;
+    background-position: 0 0;
 }
 .check-woman+label:before{
     content: '';
     position: absolute;
-    width: 71px;
-    height: 71px;
+    width: 70px;
+    height: 70px;
     left: 0;
-    top: 2px;
-    background-image: url(../img/w-b-woman.png);
+    top: -27px;
+    background: url(../img/style-check.png) no-repeat;
+    background-position: -96px 0;
+}
+.check-man:checked+label:before{
+    content: '';
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    left: 0;
+    top: -27px;
+    background: url(../img/style-check.png) no-repeat;
+    background-position: 0 -96px;
+}
+.check-woman:checked+label:before{
+    content: '';
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    left: 0;
+    top: -27px;
+    background: url(../img/style-check.png) no-repeat;
+    background-position: -97px -96px;
+}
+.style-checks p{
+    margin: 55px 0;
 }
 
