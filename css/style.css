@@ -12,11 +12,11 @@
 }
 @font-face {
     font-family: 'Roboto Slab';
-    src: url('../fonts_rs/RobotoSlab-Bold.eot');
-    src: url('../fonts_rs/RobotoSlab-Bold.eot?#iefix') format('embedded-opentype'),
-        url('../fonts_rs/RobotoSlab-Bold.woff2') format('woff2'),
-        url('../fonts_rs/RobotoSlab-Bold.woff') format('woff'),
-        url('../fonts_rs/RobotoSlab-Bold.ttf') format('truetype');
+    src: url('../fonts/RobotoSlab-Bold.eot');
+    src: url('../fonts/RobotoSlab-Bold.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/RobotoSlab-Bold.woff2') format('woff2'),
+        url('../fonts/RobotoSlab-Bold.woff') format('woff'),
+        url('../fonts/RobotoSlab-Bold.ttf') format('truetype');
     font-weight: bold;
     font-style: normal;
     font-display: swap;
@@ -42,19 +42,26 @@ h1{
 h2{
     color: #b3b3b3;
     letter-spacing: 0px;
-    font-family: 700 20px "Roboto";
+    font: 700 20px "Roboto";
     text-transform: uppercase;
+}
+hr{
+    margin: 48px 0;
+    border: 1px solid #dcdcde;
 }
 .clear:after{
     content: '';
     display: block;
     clear: both;
 }
+
+/*01. проста форма*/
+
 .simple-form{
     width: 330px;
 }
+.tform-text,
 .textinput{
-    padding: 15px 15px 12px;
     color: #b3b3b3;
     font: 400 14px "Roboto";
     width: 100%;
@@ -62,6 +69,10 @@ h2{
     background-color: #fff;
     border: 1px solid #ccc;
 }
+.textinput{
+    padding: 15px 15px 12px;
+}
+.town-select,
 .selectinput{
     padding: 15px 15px 12px;
     width: 100%;
@@ -70,29 +81,34 @@ h2{
     border: 1px solid #ccc;
     appearance: none;
 }
-.optioninput{
+.option-tform,
+.option-simple{
     display: block;
     padding: 10px;
     color: #1f222c;
     font: 400 14px "Roboto";
 }
-.optioninput:disabled{
+.option-simple:disabled{
     color: #b3b3b3;
 }
+.tform-select,
 .simple-select{
     position: relative;
     display: inline-block;
     width: 100%;
 }
+.tform-select:after,
 .simple-select:after{
     content: '';
     position: absolute;
     display: block;
     width: 9px;
     height: 5px;
+    background-image: url(../img/select.png);
+}
+.simple-select:after{
     right: 15px;
     top: 19px;
-    background-image: url(../img/select.png);
 }
 .simple-textarea{
     padding: 15px 15px 12px;
@@ -110,7 +126,7 @@ h2{
     padding: 15px 15px 12px;
     width: 100%;
     color: #fff;
-    font-family: 700 14px "Roboto";
+    font: 700 14px "Roboto";
     text-align: center;
     border-radius: 3px;
     background-color: #12d661;
@@ -125,10 +141,11 @@ textarea:focus{
     color: #1f222c;
     font: 400 14px "Roboto";
     filter: drop-shadow(0 0 2.5px rgba(62,106,255,0.55));
-    border: 1px solid #3e6aff;;
+    border: 1px solid #3e6aff;
     outline: none;
 }
-.optioninput:focus{
+.option-tform:focus,
+.option-simple:focus{
     display: block;
     padding: 10px;
     color: #fff;
@@ -140,6 +157,8 @@ input[type="submit"]:focus {
     filter: drop-shadow(0px 2px 2.5px rgba(8,118,52,0.35));
     outline: none;
 }
+
+/*02. елементи*/
 
 .radio-buttons,
 .check-buttons,
@@ -169,17 +188,19 @@ input[type="submit"]:focus {
     width: 100%;
     background-color: #f7f7f7;
     box-sizing: border-box;
-    overflow: hidden;
 }
 .delivery,
 .delivery2,
-.delivery3,
-.check-man,
-.check-woman,
-.check-butn{
+.radio-man,
+.radio-woman,
+.other,
+.r-men,
+.r-women{
     position: absolute;
     visibility: hidden;
 }
+.r-men+label,
+.r-women+label,
 .delivery+label,
 .delivery2+label{
     position: relative;
@@ -191,6 +212,8 @@ input[type="submit"]:focus {
 .delivery2:disabled+label{
     color: #b3b3b3;
 }
+.r-men+label:before,
+.r-women+label:before,
 .delivery+label:before{
     content: '';
     position: absolute;
@@ -199,25 +222,27 @@ input[type="submit"]:focus {
     border: 1px solid #f1f1f1;
     border-radius: 50%;
     left: 0;
-    top: 2px;
+    top: -2px;
 }
+.r-men:checked+label:before,
+.r-women:checked+label:before,
 .delivery:checked+label:before,
-.delivery2:checked+label:before,
-.delivery3:checked+label:before{
+.delivery2:checked+label:before{
     border: 1px solid #3e6aff;
 }
+.r-men:checked+label:after,
+.r-women:checked+label:after,
 .delivery:checked+label:after{
     content: '';
     position: absolute;
     width: 8px;
     height: 8px;
     left: 5px;
-    top: 7px;
+    top: 3px;
     border-radius: 50%;
     background-color: #3e6aff;
 }
-.delivery2+label:before,
-.delivery3+label:before{
+.delivery2+label:before{
     content: '';
     position: absolute;
     width: 17px;
@@ -225,65 +250,84 @@ input[type="submit"]:focus {
     left: 0;
     top: -2px;
     border-radius: 3px;
-    border: 1px solid #ccc;;
+    border: 1px solid #ccc;
+    background-color: #fff;
 }
 .delivery2:checked+label:before{
     border: 1px solid #3e6aff;
 }
-.delivery2:checked+label:after,
-.delivery3:checked+label:after{
+.delivery2:checked+label:after{
     content: '';
     position: absolute;
     width: 7px;
     height: 4px;
     left: 5px;
-    top: 5px;
+    top: 4px;
     transform: rotate(-45deg);
-    border-left: 2px solid #244dd7;;
+    border-left: 2px solid #244dd7;
     border-bottom: 2px solid #244dd7;
     border-radius: 5px;
 }
 .status td:first-child{
-    padding: 20px 20px 12px;
+    padding: 18px 18px 12px;
     text-align: left;
     color: #b3b3b3;
     font: 700 14px "Roboto";
     width: 20.5%;
 }
-
 .data,
 .data:focus{
     padding: 10px;
     border: none;
     border: 1px solid #ccc;
     border-radius: 3px;
+    outline: none;
 }
 ::-webkit-calendar-picker-indicator {
     background-image: url(../img/calendar.png);
+    outline: none;
 }
 .date .delivery2+label{
     margin-right: 20px;
 }
-
 .status tr{
     vertical-align: text-bottom;
 }
-.status tr:last-child th,
 .status tr:last-child td{
     padding-bottom: 20px;
 }
 
+/*03. стилізовані чекбокси*/
 
-.check-man+label,
-.check-woman+label{
+.st-checks{
+    margin-bottom: 60px;
+}
+.style-radio{
+    max-width: 440px;
+    width: 100%;
+}
+.style-radio,
+.style-check{
+    float: left;
+    vertical-align: text-bottom;
+}
+.radio-man+label,
+.radio-woman+label{
     position: relative;
     padding-left: 82px;
+    color: #1f222c;
+    font: 700 16px "Roboto";
 }
 .other+label{
     position: relative;
     padding-left: 62px;
+    color: #1f222c;
+    font: 400 14px "Roboto";
 }
-.check-man+label:before{
+.radio-man+label:before,
+.radio-woman+label:before,
+.radio-man:checked+label:before,
+.radio-woman:checked+label:before{
     content: '';
     position: absolute;
     width: 70px;
@@ -291,39 +335,138 @@ input[type="submit"]:focus {
     left: 0;
     top: -27px;
     background: url(../img/style-check.png) no-repeat;
+}
+.radio-man+label:before{
     background-position: 0 0;
 }
-.check-woman+label:before{
-    content: '';
-    position: absolute;
-    width: 70px;
-    height: 70px;
-    left: 0;
-    top: -27px;
-    background: url(../img/style-check.png) no-repeat;
+.radio-woman+label:before{
     background-position: -96px 0;
 }
-.check-man:checked+label:before{
-    content: '';
-    position: absolute;
-    width: 70px;
-    height: 70px;
-    left: 0;
-    top: -27px;
-    background: url(../img/style-check.png) no-repeat;
+.radio-man:checked+label:before{
     background-position: 0 -96px;
 }
-.check-woman:checked+label:before{
-    content: '';
-    position: absolute;
-    width: 70px;
-    height: 70px;
-    left: 0;
-    top: -27px;
-    background: url(../img/style-check.png) no-repeat;
+.radio-woman:checked+label:before{
     background-position: -97px -96px;
 }
-.style-checks p{
+.style-radio p{
     margin: 55px 0;
 }
+.style-check p:first-child,
+.style-radio p:first-child{
+    margin-top: 0;
+}
+.style-radio p:last-child{
+    margin-bottom: 16px;
+}
+.style-check p:not(p:last-child){
+    margin-bottom: 30px;
+}
+.other+label:before{
+    content: '';
+    position: absolute;
+    width: 45px;
+    height: 25px;
+    border-radius: 12px;
+    background-color: #cfcfd1;
+    left: 0;
+    top: -5px;
+    transition: all .5s ease;
+}
+.other:checked+label:before{
+    background-color: #3e6aff;
+}
+.other+label:after{
+    content: '';
+    position: absolute;
+    width: 21px;
+    height: 21px;
+    border-radius: 10px;
+    filter: drop-shadow(0 0 2.5px rgba(0,0,0,0.5));
+    background-color: #fff;
+    left: 2.5px;
+    top: -3px;
+    transition: all .5s ease;    
+}
+.other:checked+label:after{
+    left: 22.5px;
+}
+
+/*04. форма таблицею*/
+
+.form-table{
+    max-width: 500px;
+}
+.table_form{
+    width: 100%;
+    border-collapse: collapse;
+    box-sizing: border-box;
+}
+.tform-heading{
+    color: #1f222c;
+    font: 700 18px "Roboto"
+}
+.fullname{
+    text-transform: uppercase;
+}
+.tform-text{
+    padding: 12px;
+}
+.table_form td:not(.tform-heading):not(td:last-child){
+    max-width: 160px;
+    width: 100%;
+    color: #1f222c;
+    font: 400 14px "Roboto";
+}
+.table_form td:last-child{
+    max-width: 340px;
+}
+.tform-select:after{
+    top: 9px;
+    right: -317px;
+}
+.r-men+label{
+    margin-right: 20px;
+}
+.upload{
+    display: none;
+}
+.upload-file{
+    display: block;
+    padding-top: 14px;
+    padding-bottom: 10px;
+    max-width: 340px;
+    width: 50%;
+    text-align: center;
+    color: #fff;
+    font: 700 14px "Roboto";
+    border-radius: 3px;
+    background-color: #3e6aff;
+}
+.upload-file:hover{
+    filter: drop-shadow(0px 2px 2.5px rgba(15,40,126,0.35));
+    background-color: #2857f4;
+    cursor: pointer;
+}
+.tform-textarea{
+    padding: 15px 15px 12px;
+    color: #b3b3b3;
+    font: 400 14px "Roboto";
+    width: 100%;
+    max-width: 340px;
+    height: 130px;
+    max-height: 130px;
+    border-radius: 3px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+}
+.table_form tr{
+    vertical-align: text-bottom;
+}
+.table_form td{
+    padding-bottom: 15px;
+}
+.table_form td:first-child{
+    padding-bottom: 20px;
+}
+
 
