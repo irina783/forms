@@ -21,6 +21,17 @@
     font-style: normal;
     font-display: swap;
 }
+@font-face {
+    font-family: 'Roboto';
+    src: url('../fonts/Roboto-Regular.eot');
+    src: url('../fonts/Roboto-Regular.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/Roboto-Regular.woff2') format('woff2'),
+        url('../fonts/Roboto-Regular.woff') format('woff'),
+        url('../fonts/Roboto-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
 body{
     margin: 0;
     font-family:'Roboto', sans-serif;
@@ -122,7 +133,8 @@ hr{
     background-color: #fff;
     border: 1px solid #ccc;
 }
-.simple-button{
+.simple-button,
+.tform-button{
     padding: 15px 15px 12px;
     width: 100%;
     color: #fff;
@@ -140,7 +152,7 @@ select:focus,
 textarea:focus{
     color: #1f222c;
     font: 400 14px "Roboto";
-    filter: drop-shadow(0 0 2.5px rgba(62,106,255,0.55));
+    box-shadow: 0 0 2.5px rgba(62,106,255,0.55);
     border: 1px solid #3e6aff;
     outline: none;
 }
@@ -463,10 +475,16 @@ input[type="submit"]:focus {
     vertical-align: text-bottom;
 }
 .table_form td{
-    padding-bottom: 15px;
+    padding: 8px 0;
 }
 .table_form td:first-child{
     padding-bottom: 20px;
 }
-
+.tform-commit{
+    padding: 12px 0;
+    vertical-align: text-top;
+}
+.table_form td{
+    vertical-align: text-top;
+}
 

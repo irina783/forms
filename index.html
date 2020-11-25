@@ -165,7 +165,7 @@
                         </td>
                     </tr>               
                     <tr>
-                        <td>Фото:</td>
+                        <td><label for="file-button">Фото:</label></td>
                         <td>
                             <div class="upload-file">
                                 <label for="file-button">
@@ -176,7 +176,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td  class="tform-commit"><label for="table-textarea">Коментарій:</label></td>
+                        <td><label  class="tform-commit" for="table-textarea">Коментарій:</label></td>
                         <td><textarea class="tform-textarea" id="table-textarea" name="tform-comment" placeholder="Введіть текст повідомлення" resize="vertical"></textarea></td>
                     </tr>
                     <tr>
@@ -187,7 +187,47 @@
             </form>
         </div>
         <hr>
-
+        <div class="form-table5">
+            <h2>05. форма таблицею</h2>
+            <form action="fifth-form.php" method="POST">
+                <table>
+                    <tr>
+                        <td colspan="3">Оформлення заявки</td>
+                    </tr>
+                    <tr>
+                        <td><label for="f_i">Прізвище та ім'я</label></td>
+                        <td><label for="mail">Ел. пошта</label></td>
+                        <td><label for="phone">Телефон</label></td>
+                    </tr>
+                    <tr>
+                        <td><input class="tform-text5" type="text" id="f_i" name="name5" value="Василь Вірастюк" required maxlength="30" /></td>
+                        <td><label><input class="tform-text5" type="email" id="mail" name="user_email5" maxlength="30" /></label></td>
+                        <td><input class="tform-text5" type="tel" id="phone" name="user_tel5" maxlength="15" /></td>
+                    </tr>
+                </table>
+                <hr>
+                <table>
+                    <tr>
+                        <td>Країна</td>
+                        <td colspan="2">Адреса</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td colspan="2"></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
     </div>
 </body>
 
